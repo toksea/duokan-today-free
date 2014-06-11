@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "rss": "^0.3.2",
+    "request": "^2.36.0",
+    "cheerio": "^0.17.0",
+    "cron": "^1.0.4"
+  },
+  "name": "duokan-today-free",
+  "description": "A feed of duokan's free for today books",
+  "version": "0.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "node duokan_test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/toksea/duokan-today-free.git"
+  },
+  "author": "Xiaopei Li",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/toksea/duokan-today-free/issues"
+  },
+  "homepage": "https://github.com/toksea/duokan-today-free"
+}
