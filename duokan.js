@@ -29,7 +29,7 @@ module.exports = {
                 var $ = cheerio.load(body),
                     book = {
                         title: $('.m-bookdata h3').text(),
-                        url: free_url, /** @todo 换成跳转后的 URL */
+                        url: response.request.uri.href,
                         duokan_rating_value: $('.m-bookdata em[itemprop="ratingValue"]').text(),
                         duokan_rating_count: $('.g-mnc span[itemprop="reviewCount"]').text(),
                         isbn: $('.g-mnc span[itemprop="isbn"]').text()
@@ -47,6 +47,7 @@ module.exports = {
 
                     var $ = cheerio.load(body);
 
+                    book.douban_url = response.request.uri.href;
                     book.douban_rating_value = $('strong[property="v:average"]').text().trim();
                     book.douban_rating_count = $('span[property="v:votes"]').text().trim();
 
