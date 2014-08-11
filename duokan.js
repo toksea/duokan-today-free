@@ -19,7 +19,7 @@ module.exports = {
 
             // console.log('loading ' + free_url);
 
-
+            // free_url = 'http://www.duokan.com/book/53260';
             /** 20. 在多看获取本书信息 */
             request(free_url, function(error, response, body) {
                 if (error) throw error;
@@ -43,15 +43,16 @@ module.exports = {
                 request(douban_url, function(error, response, body) {
                     if (error) throw error;
 
-                    if (response.statusCode != 200) throw new Error('Request duokan free book failed');
+                    if (response.statusCode == 200) {
 
-                    var $ = cheerio.load(body);
+                        var $ = cheerio.load(body);
 
-                    book.douban_url = response.request.uri.href;
-                    book.douban_rating_value = $('strong[property="v:average"]').text().trim();
-                    book.douban_rating_count = $('span[property="v:votes"]').text().trim();
+                        book.douban_url = response.request.uri.href;
+                        book.douban_rating_value = $('strong[property="v:average"]').text().trim();
+                        book.douban_rating_count = $('span[property="v:votes"]').text().trim();
 
-                    // console.log(book);
+                        // console.log(book);
+                    }
 
                     cb(book);
                 });
@@ -59,5 +60,3 @@ module.exports = {
         });
     }
 };
-
-

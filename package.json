@@ -3,7 +3,8 @@
     "rss": "^0.3.2",
     "request": "^2.36.0",
     "cheerio": "^0.17.0",
-    "cron": "^1.0.4"
+    "cron": "^1.0.4",
+    "moment": "^2.8.1"
   },
   "name": "duokan-today-free",
   "description": "A feed of duokan's free for today books",
